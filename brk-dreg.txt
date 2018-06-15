@@ -1,0 +1,24 @@
+<form name="dev_reg" method="post" >
+  <h2 style="color: #000 !important;">Registration Form</h2>
+   <?php if(isset($mess)!=""){ ?>
+				<p style="color:#CD3E4F; font-size:18px;"><?=$mess?></p>
+		 <?php } ?>
+  <input type="text" name="d_name" id="d_name" placeholder="Name"/>
+ <input type="text" name="dev_id" id="dev_id" placeholder="Developer Id"/>
+<input type="text" name="d_email" id="d_email" placeholder="Email"/>
+<input type="text" name="d_phone" id="d_phone" placeholder="Phone No"/>
+
+ <select  name="d_designation" id="d_designation" >
+      
+  <option value="0">Select</option>
+  <option value="Php">Php</option>
+  <option value="Web Designer" >Web Designer</option>
+  <option value="User Interface/User Experience" class="selectoptn">User Interface/User Experience</option>
+  <option value="Angular Js">Angular Js</option>
+  <option value="IOT">IOT</option>
+  </select>
+
+ <input type="password" name="d_pwd" id="d_pwd" placeholder="Password"/>
+  <input type="password" name="dc_pwd" id="dc_pwd" placeholder="Confirm Password"/>
+ <input type="submit" name="submit" value="SUBMIT"/>
+</form>

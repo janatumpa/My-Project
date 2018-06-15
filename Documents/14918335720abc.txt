@@ -1,0 +1,221 @@
+
+
+<?php
+
+
+$base_ad_url = to_url(drupal_get_path('module', 'ad'));
+
+//$info = ad_app_info($aid);
+$base_theme_url = theme_url($info->theme_location);
+$title = ad_app_title($aid);
+
+
+
+   # An HTTP GET request example
+   if(isset($_COOKIE['cookie_id']) && isset($_COOKIE['cookie_email']))
+     {
+        if($_COOKIE['cookie_id'] != "" && $_COOKIE['cookie_email'] != "")
+        //echo $_COOKIE['cookie_id'];exit();
+            header("Location: aecontent");
+     }
+  else
+    {
+      if(isset($_REQUEST['next']) && $_REQUEST['next'] == "Next")
+     	{
+         $id = $_REQUEST['id'];
+         $email = $_REQUEST['email'];
+         $url = 'https://www.eventbriteapi.com/v3/orders/'.$id.'/?token=GVAHLMT5PTULV52Q2KIE';
+
+         $ch = curl_init($url);
+         curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+         curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type: application/x-www-form-urlencoded"));
+         $data = (string)curl_exec($ch);
+         curl_close($ch);
+         $result = json_decode($data, true); 
+         $email = $_REQUEST['email'];
+         $json_email = $result['email'];
+     if(isset($result['error_description']))
+        {
+          $error = "Invalid Order Information.";  
+         
+        }
+    else 
+       {
+          if($json_email != $email)
+        {
+            $error = "Invalid Order Information.";
+          
+        }
+   else
+        {
+          setcookie("cookie_id", $id, time() + ((60 * 60 * 24) * 30), "/");           // set for 30 days
+          setcookie("cookie_email", $email, time() + ((60 * 60 * 24) * 30), "/");     // set for 30 days
+          header("Location: aecontent");
+
+      }
+    }
+  }    
+?>
+
+<html>
+
+  <head>
+  <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE" />
+    <meta http-equiv="cleartype" content="on" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta  name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="/ad/ae/zf/css/normalize.css">
+   <link rel="stylesheet" href="/ad/ae/zf/css/foundation.css">
+    <link rel="stylesheet" href="/ad/ae/ad.gui.css?1">
+    <link rel="stylesheet" href="/ad/ae/app.css?1">
+     <link rel="stylesheet" href="<?php print $base_theme_url ?>/style.css?1"> 
+    <script src="zf/js/vendor/modernizr.js"></script>
+  </head>
+   
+  <body id="ae-reg">
+  
+    <header class="ae-header-section">
+      <a class="ae-left"><?php print $nav ?></a>
+      <a class="ae-right"></a> 
+    </header>
+ 
+  <form  class="ae-main-section" onSubmit="return validateTicket()"  method="post">
+        <div class="ae-content-pre"></div>
+        <div class="order-input">
+         <div class="messages">
+         <?php if(isset($error))
+         { echo $error; }
+         ?>
+        </div> 
+
+       <input  type="hidden" name="json_id" value="<?=$result['id']?>">
+	     <input  type="text" name="id" id="id"  autocomplete="off" placeholder="Order No"> 
+       <label class="red" id="iderror"> </label>  
+
+	    	<input  type="hidden" name="json_email" value="<?=$result['email']?>">
+	     <input  type="email" id="email" name="email" autocomplete="off" placeholder="Email-Address">
+      <label class="red" id="emailerror"> </label>  
+      </div>
+     
+     
+      <div class="ae-content-separator"></div>
+      <input  type="submit" class="ae-button register" onclick="return order()"  name="next" value="Next">
+      <div class="ae-content-post"></div>
+   </form>
+
+      <div class="ae-content-post"></div>
+
+    <footer class="ae-footer-section">
+      <a class="ae-left"></a>
+      <div class="ae-center"></div>
+      <a class="ae-right"></a>
+    </footer>
+
+    <script src="/ad/ae/zf/js/vendor/jquery.js"></script>
+    <script src="/ad/ae/zf/js/vendor/fastclick.js"></script>
+    <script src="/ad/ae/zf/js/foundation.min.js"></script>
+    <script src="/ad/ae/als/als/jquery.als-1.7.min.js"></script>
+    <script src="/ad/ae/ad.gui.js"></script>
+
+<!-- //////////////////validation and GoogleAnalytics /////////////////////// -->
+     <script>
+       function validateTicket() {
+       var id=document.getElementById("id").value;
+       var email=document.getElementById("email").value;
+
+          if (id=='') {
+  
+                document.getElementById("iderror").innerHTML="Mandatory Field!";
+                document.getElementById("id").style.border="2px solid red";
+                error(); 
+                return false;
+      }
+            
+          else
+         {
+            document.getElementById("iderror").innerHTML="";
+            document.getElementById("id").style.border="2px solid green";
+           
+          }
+          if (email=='') {
+           // alert("Confirmation does not match ticket number");
+             document.getElementById("emailerror").innerHTML="Mandatory Field!";
+             document.getElementById("email").style.border="2px solid red";
+               error1(); 
+            return false;
+           
+          }
+          else
+          {
+              document.getElementById("emailerror").innerHTML="";
+              document.getElementById("email").style.border="2px solid green";
+            
+           }
+           
+          return true;
+       }
+
+
+function error() {
+//alert("Play");
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88040397-1', 'auto');
+  ga('send', 'pageview');
+ga('send', {
+  hitType: 'event',
+  eventCategory: 'XLIVE',
+  eventAction: 'Error order id from Eventbrite validation. ',
+  eventLabel: 'Fall Campaign'
+});
+
+}
+function error1() {
+//alert("Play");
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88040397-1', 'auto');
+  ga('send', 'pageview');
+ga('send', {
+  hitType: 'event',
+  eventCategory: 'XLIVE',
+  eventAction: ' Error Email id from Eventbrite validation. ',
+  eventLabel: 'Fall Campaign'
+});
+
+}
+
+function order() {
+id=('#id').val();
+email=('#email').val();
+//alert(id);
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88040397-1', 'auto');
+  ga('send', 'pageview');
+ga('send', {
+  hitType: 'event',
+  eventCategory: 'XLIVE',
+  eventAction: ' Validation Successful.orderid:'+id+' aand emailid:'+email''
+  eventLabel: 'Fall Campaign'
+});
+
+}     
+
+
+ </script
+
+  </body>

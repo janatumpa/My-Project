@@ -1,0 +1,76 @@
+/* Insert Your Custom CSS Here */
+
+/*.vd_content-wrapper {
+        background: url(../img/banner/bg4.jpg)!important ;
+      
+        background-repeat: no-repeat;
+    background-attachment: fixed;
+  background-size: cover!important;
+}*/
+.vd_content-section{
+    background: transparent !important;
+}
+
+.panel-body1 {
+    background: white !important;
+    padding: 38px 28px 8px 35px !important;
+    /* margin-top: 190px; */
+}
+
+#email-input-wrapper, #password-input-wrapper {
+    background: white !important;
+    border: 1px solid #6e69cd !important;
+    margin-bottom: 25px;
+}
+#email-input-wrapper:active, #password-input-wrapper:active {
+    background: white !important;
+    border: 1px solid #6e69cd !important;
+    margin-bottom: 25px;
+}
+
+h4.text-center.font-semibold.vd_grey {
+    color: white !important;
+}
+vd_bg-green:hover {
+    background: #6e69cd !important;
+   
+}
+#con1
+{
+    height:100vh;
+    opacity: 1;
+    background-color: rgb(176, 106, 179);
+    background-image: linear-gradient(to left, rgb(69, 104, 220), rgb(176, 106, 179));
+}
+
+.txt1
+{
+    color:#6e69cd;
+}
+.txt1:hover
+{
+    color:#6e69cd;
+    text-decoration: underline;
+}
+
+.btn.vd_bg-green:hover, .btn.vd_green:hover {
+    background: #6e69cd !important;
+  
+    
+    color: #FFF !important;
+}
+.btn.vd_bg-green:hover, .btn.vd_green {
+    background: #6e69cd !important;
+  
+    
+    color: #FFF !important;
+}
+
+.vd_bg-green {
+    background-color: #6e69cd !important;
+}
+
+/*input[type="file"], input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input, select, textarea {
+    width: 100%;
+     border-bottom: 1px solid transparent !important; 
+}*/

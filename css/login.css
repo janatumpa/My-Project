@@ -1,0 +1,188 @@
+.cardhome11 {
+    background: #ffffff;
+    width: 43%;
+    margin: 0 auto;
+    /* height: 60vh; */
+    border-top: 5px solid #3F51B5;
+    padding-bottom: 20px;
+}
+.login-header {
+    /* background: #a84dff; */
+    padding: 20px;
+    font-size: 1.4em;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: #a84dff;
+}
+section#marginbottom20 {
+    padding-bottom: 5em;
+}
+.txtclr
+{
+color:#ac6ab4;
+}
+
+btns {
+    margin: 0 auto;
+}
+
+button.btn.btn-default1.pull-left.waves-effect.waves-light {
+    background: rgb(198, 199, 204);
+}
+
+.txtclr1
+{
+    color: #aa66cc;
+    /*text-transform: uppercase;*/
+    font-weight: 500;
+}
+.txt
+{
+  color: #aa66cc;
+  font-weight: 500;
+  letter-spacing : 2px;
+  font-size:14px;
+}
+
+.width150
+{
+width:150px;
+font-size:15px !important;
+}
+.btns {
+    padding: 0px 38px 0px 25px;
+    margin: 0 auto;
+}
+.height114
+{
+    /*height:114vh;*/
+}
+#pw, #mail
+{
+    font-weight: 500;
+}
+
+.con1
+{
+    /*margin-top: -20px;*/
+}
+
+label#error_d_name {
+    margin-top: 20px;
+}
+.height80
+{
+    /*height:85vh !important;*/
+}
+.height86
+{
+    /*height:86vh !important;
+}*/
+}
+
+.cardhome1
+{
+    background: #ffffff;
+    width: 43%;
+    margin: 0px auto;
+    /*height: 53vh;*/
+     padding-bottom: 2em;
+    border-top: 5px solid #3F51B5;
+}
+.height100
+{
+    /*height:100vh;*/
+}
+.height100
+{
+    /*height:107vh;*/
+}
+
+label#error_c_pwd, #error_dc_pwd{
+    margin-top: 23px;
+    margin-left: 15px;
+}
+
+label#error_phone, #error_d_phone {
+    margin-top: 20px;
+}
+
+#paddingtop3 {
+    padding-top: 3px;
+}
+
+.height117 {
+    height: 117vh;
+}
+
+/*.height113
+{
+    height: 113vh;
+}*/
+
+#error_name, #error_emp_id, #error_email, #error_s_position, #error_dev_id  {
+    margin-top: 35px;
+}
+label#error_d_email {
+    margin-top: 48px;
+}
+@media only screen and (max-width: 767px) {
+
+ .txtclr1 {
+    color: #aa66cc;
+    /* text-transform: uppercase; */
+    font-weight: 500;
+        font-size: 12px;
+} 
+
+/*.cardhome11 {
+    background: #ffffff;
+    width: 100%;
+    margin: 0 auto;
+    height: 65vh;
+    border-top: 5px solid #3F51B5;
+}*/
+.cardhome11 {
+    background: #ffffff;
+    width: 90%;
+    margin: 20px auto;
+    /*height: 56vh;*/
+    border-top: 5px solid #3F51B5;
+}
+.cardhome1 {
+    background: #ffffff;
+    width: 89%;
+    margin: 0px auto;
+    /*height: 53vh;*/
+     /*padding-bottom: 2em;*/
+    border-top: 5px solid #3F51B5;
+}
+/*.cardhomesreg {
+    background: #ffffff;
+    width: 89%;
+    margin: 0px auto;
+   padding-bottom: 2em;
+    border-top: 5px solid #3F51B5;
+}*/
+.height86 {
+    /*height: 92vh !important;*/
+}
+.height100 {
+    /*height: 109vh;*/
+}
+.con1 {
+    /* margin-top: -20px; */
+    width: 100%;
+    padding-bottom: 4em;
+}
+.heightres {
+    /*height: 108vh !important;*/
+}
+section.con1.height100.heightresback {
+    /*height: 125vh;*/
+}
+.height114 {
+    /*height: 100vh;*/
+}
+}

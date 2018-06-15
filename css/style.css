@@ -1,0 +1,329 @@
+/*Home background*/
+.bck
+{
+   background-color: #0288D1;
+    background: radial-gradient(circle, #039BE5, #01579b);
+}
+/* end*/
+.btn11 {
+    margin-top: 20em;
+    text-align: center;
+}
+/*Home button css*/
+.success
+{
+  color: #fff;
+    background-color: #e45641;
+        
+        border: 2px solid #e45641;
+    padding: 10px 40px; 
+     width: 200px;
+    border-radius: 10px;
+}
+.info
+{
+  color: #fff;
+    background-color: #f1a94e;
+        
+        border: 2px solid #f1a94e;
+    padding: 10px 40px; 
+     width: 200px;
+    border-radius: 10px;
+}
+
+/*navigation*/
+nav.navbar.navbar-default {
+    margin-top: -20px;
+}
+
+
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);
+
+*{
+  -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;    
+}
+
+body{
+  background:#272c32;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size:15px;
+  /*padding-top: 20px;;*/
+}
+
+h1{
+  color:#272c32;
+  display:block;
+  text-align:center;
+  font-size:2em;
+  margin:0;
+  margin-bottom:25px;
+  
+}
+/*  end*/
+
+/*Registraion*/
+form{
+  width:400px;
+  padding: 18px 0px 0px 0px;
+  margin:auto;
+  /*background:rgba(238, 238, 238, 0.66);*/
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  margin-top: 15px;
+}
+
+fieldset{
+  border:0;
+  margin:0;
+  padding:0;
+  position:relative;
+}
+
+/*input[type="text"], input[type="password"]{
+  border: 1px solid #dadada;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  width:100%;
+  padding: 10px;
+  color:#272c32;
+  margin-bottom:5px;
+}*/
+
+/*input[type="text"]:focus, input[type="password"]:focus{
+  border:1px solid #4cb182;
+  outline:none !important;
+}*/
+
+input[type="submit"]{
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background:#4cb182;
+  border:0;
+  padding: 16px 0;
+  color:#fff;
+  font-weight:800;
+  width:100%;
+  font-size:1.1em
+}
+
+input[type="submit"]:hover{
+  background:#408F6A;
+}
+
+input[type="text"]:after{
+  content:'ddd';
+  background:#ccc;
+  height:40px;
+  width:40px;
+}
+
+.ph{
+   -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  position:absolute;
+  right: 6px;
+  top: 9px;
+  padding: 2px 5px;
+  background:#4cb182;
+  color:#fff;
+  display:none;
+}
+/*Registration background css*/
+.reg
+{
+  
+     background-image: url("images/reg.jpeg");
+}
+
+
+/* 'Open Sans' font from Google Fonts */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+body {
+  background: #456;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.login {
+  width: 400px;
+  margin: 24px auto;
+  font-size: 16px;
+  text-align:center
+}
+
+/* Reset top and bottom margins from certain elements */
+.login-header,
+.login p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* The triangle form is achieved by a CSS hack */
+.login-triangle {
+  width: 0;
+  margin-right: auto;
+  margin-left: auto;
+  border: 12px solid transparent;
+  border-bottom-color: #a84dff;
+}
+
+/*.login-header {
+  background: #a84dff;
+  padding: 20px;
+  font-size: 1.4em;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+}*/
+
+/*.login-container {
+  background: #ebebeb;
+  padding: 12px;
+}*/
+
+/* Every row inside .login-container is defined with p tags */
+.login p {
+  padding: 12px;
+}
+
+/*.login input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 16px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+}*/
+
+/*.login input[type="email"],
+.login input[type="password"] {
+  background: #fff;
+  border-color: #bbb;
+  color: #555;
+}*/
+
+/* Text fields' focus effect */
+.login input[type="email"]:focus,
+.login input[type="password"]:focus {
+  border-color: #888;
+}
+
+.login input[type="submit"] {
+  background: #a84dff;
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.login input[type="submit"]:hover {
+  background: #a84dff;
+}
+
+/* Buttons' focus effect */
+.login input[type="submit"]:focus {
+  border-color: #a84dff;
+}
+
+/*K.B*/
+    .red
+    {
+      color:red;
+    }
+    .green
+    {
+      color:green;
+    }
+
+
+
+
+.slog, .dlog {
+    background: rgba(104, 104, 206, 0.47) !important;
+    width: 100px;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    border:none !important;
+    max-width: 203px;
+}
+.slog:hover, .dlog:hover {
+ background:rgba(104, 104, 206, 0.67) !important;
+}
+
+button.submit1.slog {
+    padding: 8px;
+    border-radius: 4px;
+}
+
+
+
+
+
+@media only screen and (max-width: 767px) {
+
+  form {
+    width: 210px;
+    padding: 15px 10px 0px 0px;
+    margin: auto;
+   
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    margin-top: 0px;
+}
+
+.slog, .dlog {
+    background: rgba(104, 104, 206, 0.47) !important;
+    width: 91px;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    border: none !important;
+    max-width: 203px;
+}
+button.submit1.slog {
+    padding: 8px;
+    border-radius: 4px;
+    width: 65px;
+}
+.md-form {
+    width: 208px;
+}
+.cardhome11 {
+    background: #ffffff;
+    width: 85%;
+    margin: 0 auto;
+    height: 60vh;
+    border-top: 5px solid #3F51B5;
+}
+.login {
+    width: 306px;
+    /* margin: 38px auto; */
+    font-size: 16px;
+    text-align: center;
+}
+}
+
+@media only screen and (max-width: 568px)
+{
+
+.con1 {
+    /* margin-top: -20px; */
+    width: 106%;
+}
+.cardhome11 {
+    background: #ffffff;
+    width: 80%;
+    margin: 20px auto;
+    height: 64vh;
+    border-top: 5px solid #3F51B5;
+}
+}
